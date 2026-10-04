@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1e33">
+  <meta name="description" content="Foundation of Nursing (FON) Exam Prep Platform – Study notes, flashcards, practice quizzes and mock exams for 200 Level Nursing Science. Created by Sen. Chima Chimdindu Macdonald (DAVINTODIGITAL).">
+  <meta name="author" content="Sen. Chima Chimdindu Macdonald (DAVINTODIGITAL)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>MedIntellect Academy | FON Exam Prep</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div style="display:flex;align-items:center;gap:0.6rem">
+      <button class="nav-toggle" id="menu-btn" aria-label="Menu">☰</button>
+      <div class="logo">MedIntellect <span>| FON Academy</span></div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-outline btn-sm" onclick="showSection('quiz')">Practice</button>
+      <button class="btn btn-primary btn-sm" onclick="showSection('flash')">Flashcards</button>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="nav-section">Main</div>
+    <a href="#" class="nav-link active" data-section="home"><span class="icon">⌂</span> Home</a>
+    <a href="#" class="nav-link" data-section="notes"><span class="icon">📖</span> Study Notes</a>
+    <a href="#" class="nav-link" data-section="flash"><span class="icon">🃏</span> Flashcards</a>
+    <a href="#" class="nav-link" data-section="quiz"><span class="icon">📝</span> Practice Quiz</a>
+    <a href="#" class="nav-link" data-section="highyield"><span class="icon">⭐</span> High-Yield</a>
+    <a href="#" class="nav-link" data-section="progress"><span class="icon">📊</span> My Progress</a>
+    <div class="nav-section">Quick Topics</div>
+    <a href="#" class="nav-link" data-section="notes" onclick="setTimeout(()=>document.getElementById('t-vitals')?.scrollIntoView(),300)"><span class="icon">❤️</span> Vital Signs</a>
+    <a href="#" class="nav-link" data-section="notes" onclick="setTimeout(()=>document.getElementById('t-infection')?.scrollIntoView(),300)"><span class="icon">🦠</span> Infection Control</a>
+    <a href="#" class="nav-link" data-section="notes" onclick="setTimeout(()=>document.getElementById('t-theories')?.scrollIntoView(),300)"><span class="icon">📚</span> Theories</a>
+    <a href="#" class="nav-link" data-section="notes" onclick="setTimeout(()=>document.getElementById('t-meds')?.scrollIntoView(),300)"><span class="icon">💊</span> Medicines</a>
+    <a href="#" class="nav-link" data-section="notes" onclick="setTimeout(()=>document.getElementById('t-oxygen')?.scrollIntoView(),300)"><span class="icon">🫁</span> Oxygen</a>
+  </nav>
+
+  <main class="main">
+
+    <!-- HOME -->
+    <section id="home" class="section active">
+      <div class="hero">
+        <div class="badge">200 Level Nursing Science</div>
+        <h1>Foundation of Nursing<br>Exam Preparation Platform</h1>
+        <p class="sub">Study notes • Flashcards • Practice quizzes • High-yield revision</p>
+        <div class="flex gap-1 justify-center flex-wrap mt-2">
+          <button class="btn btn-primary" onclick="showSection('notes')">Start Studying</button>
+          <button class="btn btn-secondary" onclick="showSection('quiz')">Take Practice Quiz</button>
+          <button class="btn btn-outline" onclick="showSection('flash')">Flashcards</button>
+        </div>
+        <div class="creator">
+          <strong>Sen. Chima Chimdindu Macdonald (DAVINTODIGITAL)</strong>
+          Founder, MedIntellect Academy
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>How to Pass with this Platform</h3>
+        <ol>
+          <li><strong>Study Notes</strong> – Read each topic carefully (accordion style for quick navigation).</li>
+          <li><strong>Flashcards</strong> – Master key definitions and lists with active recall.</li>
+          <li><strong>Practice Quiz</strong> – Test yourself with theory, short-answer and MCQ questions.</li>
+          <li><strong>High-Yield</strong> – Focus on the most frequently examined points first.</li>
+          <li><strong>Track Progress</strong> – Review your scores and weak areas.</li>
+        </ol>
+        <div class="highlight mt-1">Install this app on your phone for offline study. Tap the browser menu → “Add to Home Screen” or “Install app”.</div>
+      </div>
+
+      <div class="card">
+        <h3>Topics Covered</h3>
+        <ul>
+          <li>Introduction to Fundamentals of Nursing</li>
+          <li>Philosophy, Goals & Historical Development</li>
+          <li>Roles of the Professional Nurse & Metaparadigm</li>
+          <li>Basic Human Needs & Maslow’s Hierarchy</li>
+          <li>Nursing Process & Ethical Responsibilities</li>
+          <li>Client Teaching & Learning Environment</li>
+          <li>Communication in Healthcare</li>
+          <li>Vital Signs Assessment</li>
+          <li>Infection Prevention, Asepsis & Sterilization</li>
+          <li>Nursing Theories & Application</li>
+          <li>Administration of Medicines</li>
+          <li>Oxygen Therapy & Delivery Systems</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STUDY NOTES -->
+    <section id="notes" class="section">
+      <div class="card">
+        <h2>Study Notes</h2>
+        <p class="text-muted">Tap any topic to expand. All content is based on your lecture materials and handbook.</p>
+      </div>
+
+      <!-- Topic 1 -->
+      <div class="topic-item">
+        <button class="topic-header">1. Introduction to Fundamentals of Nursing <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <p>Fundamentals of Nursing is the cornerstone of nursing education. It is both an <strong>art</strong> and a <strong>science</strong>.</p>
+            <div class="definition">“Putting the patient in the best condition for nature to act upon him.” <span class="author">— Florence Nightingale (1860)</span></div>
+            <div class="definition">“Assist the individual… in activities contributing to health or recovery that he would perform unaided if he had the necessary strength, will or knowledge.” <span class="author">— Virginia Henderson (1966)</span></div>
+            <p class="mt-1"><strong>ICN:</strong> Autonomous and collaborative care of individuals of all ages, families, groups and communities — health promotion, disease prevention, care of the ill/disabled/dying, advocacy, research, education, policy and management.</p>
+            <h4>Goals of Nursing</h4>
+            <p>Promotion of health • Prevention of disease • Restoration of health • Rehabilitation • Relief of pain & suffering • Comfort • Health education • Emotional support • Assistance with ADLs • Support for dignified death.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Topic Roles & Metaparadigm -->
+      <div class="topic-item">
+        <button class="topic-header">2. Roles of the Nurse & Metaparadigm <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <h4>Nine Professional Roles</h4>
+            <p>Caregiver • Advocate • Educator • Communicator • Counsellor • Leader • Researcher • Manager • Collaborator</p>
+            <h4>Metaparadigm (4 Concepts)</h4>
+            <ul>
+              <li><strong>Person</strong> – recipient of care (individual, family, group, community)</li>
+              <li><strong>Environment</strong> – internal & external factors influencing health</li>
+              <li><strong>Health</strong> – dynamic state of well-being (not merely absence of disease)</li>
+              <li><strong>Nursing</strong> – actions, knowledge & relationships that help people achieve/maintain/recover health</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maslow -->
+      <div class="topic-item">
+        <button class="topic-header">3. Basic Human Needs & Maslow <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <ol>
+              <li><strong>Physiological</strong> – oxygen, food, water, elimination, temperature, rest, activity</li>
+              <li><strong>Safety & Security</strong> – protection from harm, stability, freedom from fear</li>
+              <li><strong>Love & Belonging</strong> – affection, relationships, social connection</li>
+              <li><strong>Esteem</strong> – self-respect, recognition, sense of worth</li>
+              <li><strong>Self-Actualization</strong> – achieving potential, creativity, personal growth</li>
+            </ol>
+            <div class="highlight">Lower needs must be reasonably satisfied before higher needs become motivators. Nurses prioritise care accordingly.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nursing Process & Ethics -->
+      <div class="topic-item">
+        <button class="topic-header">4. Nursing Process & Ethics <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <h4>Five Steps</h4>
+            <p><strong>A</strong>ssessment → <strong>D</strong>iagnosis → <strong>P</strong>lanning → <strong>I</strong>mplementation → <strong>E</strong>valuation</p>
+            <h4>Key Ethical Principles</h4>
+            <ul>
+              <li><strong>Autonomy</strong> – respect patient’s right to decide</li>
+              <li><strong>Beneficence</strong> – do good</li>
+              <li><strong>Non-maleficence</strong> – do no harm</li>
+              <li><strong>Justice</strong> – fairness</li>
+              <li><strong>Veracity</strong> – truthfulness</li>
+              <li><strong>Confidentiality</strong> – protect private information</li>
+              <li><strong>Accountability & Integrity</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teaching & Communication -->
+      <div class="topic-item">
+        <button class="topic-header">5. Client Teaching & Communication <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <h4>Domains of Learning</h4>
+            <p>Cognitive (knowledge) • Psychomotor (skills) • Affective (attitudes/values)</p>
+            <p><strong>SMART</strong> objectives: Specific, Measurable, Achievable, Relevant, Time-bound</p>
+            <h4>Therapeutic Techniques</h4>
+            <p>Active listening • Open-ended questions • Clarification • Reflection • Restating • Summarizing • Focusing • Silence • Offering self</p>
+            <h4>Avoid (Non-therapeutic)</h4>
+            <p>False reassurance • Unsolicited advice • Accusatory “why” questions • Changing subject • Judgments</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vitals -->
+      <div class="topic-item" id="t-vitals">
+        <button class="topic-header">6. Vital Signs Assessment <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <ul>
+              <li><strong>Temperature (oral)</strong>: ≈ 36.2–37.2°C (some sources 36.5–37.5°C)</li>
+              <li><strong>Pulse</strong>: 60–100 bpm (Tachycardia >100 • Bradycardia <60)</li>
+              <li><strong>Respiration</strong>: 12–20 /min</li>
+              <li><strong>Blood Pressure</strong>: ≈ 120/80 mmHg</li>
+              <li><strong>SpO₂</strong>: 95–100% (healthy adults)</li>
+              <li><strong>Pain</strong>: PQRST – Provoking, Quality, Region/Radiation, Severity, Timing</li>
+            </ul>
+            <div class="highlight">Always explain procedure, wash hands, ensure privacy, use correct technique, compare with previous values, report abnormalities, document promptly.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infection -->
+      <div class="topic-item" id="t-infection">
+        <button class="topic-header">7. Infection Prevention & Asepsis <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <h4>Chain of Infection (6 links)</h4>
+            <p>Infectious agent → Reservoir → Portal of exit → Mode of transmission → Portal of entry → Susceptible host</p>
+            <h4>Medical vs Surgical Asepsis</h4>
+            <p><strong>Medical (Clean)</strong> – reduce number & spread of microbes<br>
+            <strong>Surgical (Sterile)</strong> – eliminate all microbes including spores</p>
+            <h4>Transmission-Based Precautions</h4>
+            <ul>
+              <li><strong>Contact</strong> (MRSA, C. diff) – gloves + gown</li>
+              <li><strong>Droplet</strong> (Influenza, Meningococcus) – surgical mask</li>
+              <li><strong>Airborne</strong> (TB, Measles, Chickenpox) – N95 + isolation room</li>
+            </ul>
+            <h4>WHO Five Moments</h4>
+            <p>Before patient • Before clean/aseptic • After body fluid • After patient • After surroundings</p>
+            <h4>Sterilization Methods</h4>
+            <p>Autoclave (moist heat 121°C 15–20 min) • Dry heat • Chemical • Ethylene oxide gas • Gamma radiation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theories -->
+      <div class="topic-item" id="t-theories">
+        <button class="topic-header">8. Nursing Theories <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Theorist</th><th>Focus</th><th>Key Application</th></tr></thead>
+                <tbody>
+                  <tr><td>Nightingale</td><td>Environment</td><td>Hygiene, infection prevention</td></tr>
+                  <tr><td>Henderson</td><td>14 Basic Needs</td><td>ADLs, independence</td></tr>
+                  <tr><td>Orem</td><td>Self-Care Deficit</td><td>Patient education, rehab</td></tr>
+                  <tr><td>Peplau</td><td>Interpersonal Relations</td><td>Psychiatric, counselling</td></tr>
+                  <tr><td>Roy</td><td>Adaptation</td><td>Chronic illness, rehab</td></tr>
+                  <tr><td>Neuman</td><td>Systems / Stressors</td><td>Critical care, community</td></tr>
+                  <tr><td>Watson</td><td>Human Caring</td><td>Palliative, holistic care</td></tr>
+                  <tr><td>Leininger</td><td>Cultural Care</td><td>Culturally congruent care</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-1"><strong>Orem systems:</strong> Wholly compensatory • Partly compensatory • Supportive-educative</p>
+            <p><strong>Peplau phases:</strong> Orientation → Identification → Working → Resolution</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medicines -->
+      <div class="topic-item" id="t-meds">
+        <button class="topic-header">9. Administration of Medicines <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <h4>Core Safety Rules</h4>
+            <ul>
+              <li>Perform medication checks (when removing, preparing, administering)</li>
+              <li>Verify patient identity</li>
+              <li>Never administer unlabelled medication</li>
+              <li>Document and monitor response</li>
+              <li>Respect and document refusal</li>
+            </ul>
+            <h4>IM Injection Sites</h4>
+            <p>1. Upper outer quadrant of buttock (avoid sciatic nerve)<br>
+            2. Outer aspect of thigh (vastus lateralis)<br>
+            3. Deltoid</p>
+            <h4>Dangerous Drugs</h4>
+            <p>Locked cupboard • Controlled key custody • Accurate register • Checked at every shift change</p>
+            <div class="highlight warn">Always read the label carefully. If in doubt, do not give. Check against the prescription.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oxygen -->
+      <div class="topic-item" id="t-oxygen">
+        <button class="topic-header">10. Oxygen Therapy <span class="chev">▼</span></button>
+        <div class="topic-body">
+          <div class="card">
+            <ul>
+              <li><strong>Room air</strong> ≈ 21% oxygen</li>
+              <li><strong>Nasal cannula</strong>: 1–6 L/min → FiO₂ ≈ 24–44%</li>
+              <li><strong>Simple face mask</strong>: 5–10 L/min → FiO₂ ≈ 35–50% (min 5–6 L to prevent CO₂ rebreathing)</li>
+              <li><strong>Partial rebreather</strong>: 8–15 L/min → FiO₂ ≈ 50–70%</li>
+              <li><strong>Non-rebreather</strong>: 10–15+ L/min → FiO₂ ≈ 60–90%+</li>
+              <li><strong>Venturi mask</strong>: Precise controlled FiO₂ (ideal for COPD)</li>
+            </ul>
+            <h4>Critical Safety</h4>
+            <ul>
+              <li>Oxygen supports combustion — no flames, smoking or petroleum products</li>
+              <li>Humidify at flows ≥ 4 L/min</li>
+              <li>Prolonged high FiO₂ (>50% for >24–48 h) risks oxygen toxicity</li>
+              <li><strong>COPD target SpO₂: 88–92%</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLASHCARDS -->
+    <section id="flash" class="section">
+      <div class="card text-center">
+        <h2>Flashcards – Active Recall</h2>
+        <p class="text-muted">Tap the card to flip. Master these high-yield facts.</p>
+      </div>
+      <div class="flash-container">
+        <div class="flashcard" id="flashcard">
+          <div class="flash-face flash-front" id="flash-front">Loading…</div>
+          <div class="flash-face flash-back" id="flash-back"></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="text-muted" id="flash-counter">1 / 20</p>
+        <div class="flex gap-1 justify-center mt-1">
+          <button class="btn btn-secondary" id="flash-prev">← Previous</button>
+          <button class="btn btn-primary" id="flash-next">Next →</button>
+        </div>
+      </div>
+      <div class="card mt-2">
+        <p class="text-muted text-center">Tip: Say the answer out loud before flipping. This strengthens memory far more than passive reading.</p>
+      </div>
+    </section>
+
+    <!-- PRACTICE QUIZ -->
+    <section id="quiz" class="section">
+      <div class="card">
+        <h2>Practice Question Bank</h2>
+        <p class="text-muted">Theory, Short-answer and MCQs. Answers are hidden until you reveal them or select an option.</p>
+      </div>
+
+      <div class="search-box">
+        <input type="search" id="search-input" placeholder="Search questions…">
+      </div>
+
+      <div class="quiz-tabs">
+        <button class="tab-btn active" onclick="document.querySelectorAll('.quiz-panel').forEach(p=>p.classList.add('hidden'));document.getElementById('theory-panel').classList.remove('hidden');document.querySelectorAll('.tab-btn').forEach(t=>t.classList.remove('active'));this.classList.add('active')">Theory</button>
+        <button class="tab-btn" onclick="document.querySelectorAll('.quiz-panel').forEach(p=>p.classList.add('hidden'));document.getElementById('short-panel').classList.remove('hidden');document.querySelectorAll('.tab-btn').forEach(t=>t.classList.remove('active'));this.classList.add('active')">Short Answer</button>
+        <button class="tab-btn" onclick="document.querySelectorAll('.quiz-panel').forEach(p=>p.classList.add('hidden'));document.getElementById('mcq-panel').classList.remove('hidden');document.querySelectorAll('.tab-btn').forEach(t=>t.classList.remove('active'));this.classList.add('active')">MCQs</button>
+      </div>
+
+      <!-- Theory Panel -->
+      <div id="theory-panel" class="quiz-panel">
+        <div class="question-card"><span class="q-num">T1</span><div class="q-text">Define nursing.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Nursing is a dynamic profession dedicated to promoting health, preventing illness, restoring health and alleviating suffering while addressing the physical, psychological, social, cultural and spiritual needs of patients.</div></div>
+        <div class="question-card"><span class="q-num">T2</span><div class="q-text">State Florence Nightingale’s definition of nursing.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Putting the patient in the best condition for nature to act upon him.</div></div>
+        <div class="question-card"><span class="q-num">T3</span><div class="q-text">List the five steps of the nursing process in order.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Assessment, Diagnosis, Planning, Implementation, Evaluation.</div></div>
+        <div class="question-card"><span class="q-num">T4</span><div class="q-text">List Maslow’s hierarchy of needs from lowest to highest.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Physiological → Safety & Security → Love & Belonging → Esteem → Self-Actualization.</div></div>
+        <div class="question-card"><span class="q-num">T5</span><div class="q-text">List the six links in the chain of infection.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Infectious agent, Reservoir, Portal of exit, Mode of transmission, Portal of entry, Susceptible host.</div></div>
+        <div class="question-card"><span class="q-num">T6</span><div class="q-text">State the WHO Five Moments for Hand Hygiene.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Before touching a patient; before a clean/aseptic procedure; after body-fluid exposure risk; after touching a patient; after touching the patient’s surroundings.</div></div>
+        <div class="question-card"><span class="q-num">T7</span><div class="q-text">Differentiate medical and surgical asepsis.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Medical asepsis (clean technique) reduces the number and spread of microorganisms. Surgical asepsis (sterile technique) eliminates all microorganisms including bacterial spores.</div></div>
+        <div class="question-card"><span class="q-num">T8</span><div class="q-text">Name Orem’s three nursing systems.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Wholly compensatory, Partly compensatory, Supportive-educative.</div></div>
+        <div class="question-card"><span class="q-num">T9</span><div class="q-text">List Peplau’s four phases of the nurse–patient relationship.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Orientation, Identification, Exploitation/Working, Resolution.</div></div>
+        <div class="question-card"><span class="q-num">T10</span><div class="q-text">State the approximate normal adult vital signs and the COPD SpO₂ target.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Temp ≈36.2–37.2°C; Pulse 60–100; Resp 12–20; BP ≈120/80; SpO₂ 95–100% (healthy). COPD target SpO₂ 88–92%.</div></div>
+        <div class="question-card"><span class="q-num">T11</span><div class="q-text">List the three common IM injection sites and the structure to avoid in the gluteal site.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Upper outer quadrant of buttock, outer aspect of thigh, deltoid. Avoid the sciatic nerve.</div></div>
+        <div class="question-card"><span class="q-num">T12</span><div class="q-text">State the major oxygen safety precautions.</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>No open flames/smoking/petroleum products; humidify ≥4 L/min; monitor for oxygen toxicity; COPD patients target SpO₂ 88–92%.</div></div>
+      </div>
+
+      <!-- Short Answer -->
+      <div id="short-panel" class="quiz-panel hidden">
+        <div class="question-card"><span class="q-num">S1</span><div class="q-text">Who developed the Environmental Theory?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Florence Nightingale</div></div>
+        <div class="question-card"><span class="q-num">S2</span><div class="q-text">Who developed Self-Care Deficit Theory?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Dorothea Orem</div></div>
+        <div class="question-card"><span class="q-num">S3</span><div class="q-text">Who developed Interpersonal Relations Theory?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Hildegard Peplau</div></div>
+        <div class="question-card"><span class="q-num">S4</span><div class="q-text">Normal adult pulse rate?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>60–100 beats per minute</div></div>
+        <div class="question-card"><span class="q-num">S5</span><div class="q-text">Normal adult respiratory rate?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>12–20 breaths per minute</div></div>
+        <div class="question-card"><span class="q-num">S6</span><div class="q-text">COPD target SpO₂?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>88–92%</div></div>
+        <div class="question-card"><span class="q-num">S7</span><div class="q-text">Room air oxygen concentration?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>≈ 21%</div></div>
+        <div class="question-card"><span class="q-num">S8</span><div class="q-text">Major nerve to avoid in gluteal IM injection?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Sciatic nerve</div></div>
+        <div class="question-card"><span class="q-num">S9</span><div class="q-text">What does SMART stand for?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Specific, Measurable, Achievable, Relevant, Time-bound</div></div>
+        <div class="question-card"><span class="q-num">S10</span><div class="q-text">TB requires which transmission-based precaution?</div><button class="btn btn-secondary btn-sm toggle-ans">Show Answer</button><div class="answer-box"><div class="label">Answer</div>Airborne</div></div>
+      </div>
+
+      <!-- MCQ Panel -->
+      <div id="mcq-panel" class="quiz-panel hidden">
+        <div class="question-card">
+          <span class="q-num">MCQ1</span>
+          <div class="q-text">Who defined nursing as “putting the patient in the best condition for nature to act upon him”?</div>
+          <ul class="mcq-options" data-correct="B">
+            <li>A. Virginia Henderson</li>
+            <li>B. Florence Nightingale</li>
+            <li>C. Jean Watson</li>
+            <li>D. Dorothea Orem</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>B. Florence Nightingale</div>
+        </div>
+        <div class="question-card">
+          <span class="q-num">MCQ2</span>
+          <div class="q-text">The first step of the nursing process is:</div>
+          <ul class="mcq-options" data-correct="B">
+            <li>A. Planning</li>
+            <li>B. Assessment</li>
+            <li>C. Implementation</li>
+            <li>D. Evaluation</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>B. Assessment</div>
+        </div>
+        <div class="question-card">
+          <span class="q-num">MCQ3</span>
+          <div class="q-text">Which ethical principle means “do no harm”?</div>
+          <ul class="mcq-options" data-correct="A">
+            <li>A. Non-maleficence</li>
+            <li>B. Beneficence</li>
+            <li>C. Justice</li>
+            <li>D. Autonomy</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>A. Non-maleficence</div>
+        </div>
+        <div class="question-card">
+          <span class="q-num">MCQ4</span>
+          <div class="q-text">How many links are in the chain of infection?</div>
+          <ul class="mcq-options" data-correct="D">
+            <li>A. 3</li>
+            <li>B. 4</li>
+            <li>C. 5</li>
+            <li>D. 6</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>D. 6</div>
+        </div>
+        <div class="question-card">
+          <span class="q-num">MCQ5</span>
+          <div class="q-text">Normal adult pulse rate is approximately:</div>
+          <ul class="mcq-options" data-correct="C">
+            <li>A. 20–40 bpm</li>
+            <li>B. 40–50 bpm</li>
+            <li>C. 60–100 bpm</li>
+            <li>D. 120–160 bpm</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>C. 60–100 bpm</div>
+        </div>
+        <div class="question-card">
+          <span class="q-num">MCQ6</span>
+          <div class="q-text">Tuberculosis commonly requires:</div>
+          <ul class="mcq-options" data-correct="C">
+            <li>A. Contact precautions</li>
+            <li>B. Droplet precautions</li>
+            <li>C. Airborne precautions</li>
+            <li>D. No special precautions</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>C. Airborne precautions</div>
+        </div>
+        <div class="question-card">
+          <span class="q-num">MCQ7</span>
+          <div class="q-text">COPD target SpO₂ is usually:</div>
+          <ul class="mcq-options" data-correct="C">
+            <li>A. 60–70%</li>
+            <li>B. 70–80%</li>
+            <li>C. 88–92%</li>
+            <li>D. 99–100%</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>C. 88–92%</div>
+        </div>
+        <div class="question-card">
+          <span class="q-num">MCQ8</span>
+          <div class="q-text">The major nerve to avoid during gluteal IM injection is:</div>
+          <ul class="mcq-options" data-correct="B">
+            <li>A. Optic nerve</li>
+            <li>B. Sciatic nerve</li>
+            <li>C. Facial nerve</li>
+            <li>D. Vagus nerve</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>B. Sciatic nerve</div>
+        </div>
+        <div class="question-card">
+          <span class="q-num">MCQ9</span>
+          <div class="q-text">Orem’s theory focuses mainly on:</div>
+          <ul class="mcq-options" data-correct="A">
+            <li>A. Self-care</li>
+            <li>B. Environment</li>
+            <li>C. Interpersonal relations</li>
+            <li>D. Culture</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>A. Self-care</div>
+        </div>
+        <div class="question-card">
+          <span class="q-num">MCQ10</span>
+          <div class="q-text">An unlabelled medication should be:</div>
+          <ul class="mcq-options" data-correct="C">
+            <li>A. Administered immediately</li>
+            <li>B. Stored for later</li>
+            <li>C. Not administered</li>
+            <li>D. Given to another patient</li>
+          </ul>
+          <div class="answer-box"><div class="label">Correct</div>C. Not administered</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGH YIELD -->
+    <section id="highyield" class="section">
+      <div class="card">
+        <h2>⭐ High-Yield Areas to Master First</h2>
+        <p class="text-muted">These points appear most frequently in examinations. Master them thoroughly.</p>
+      </div>
+      <div class="card">
+        <ol>
+          <li>Definitions of nursing by Nightingale, Henderson and ICN</li>
+          <li>Four nursing metaparadigm concepts</li>
+          <li>Maslow’s five levels in correct order</li>
+          <li>Five steps of the nursing process</li>
+          <li>Nine professional nurse roles</li>
+          <li>Ethical principles (Autonomy, Beneficence, Non-maleficence, Justice, Veracity, Confidentiality, Accountability)</li>
+          <li>Six links in the chain of infection</li>
+          <li>Standard vs Transmission-based precautions (Contact / Droplet / Airborne)</li>
+          <li>WHO Five Moments for Hand Hygiene</li>
+          <li>Medical vs Surgical Asepsis</li>
+          <li>Major nursing theories + main focus + one clinical application</li>
+          <li>Therapeutic vs Non-therapeutic communication</li>
+          <li>Normal adult vital signs + PQRST</li>
+          <li>Medication checks, identity verification, dangerous-drug control</li>
+          <li>Three IM sites + sciatic nerve avoidance</li>
+          <li>Oxygen devices, FiO₂ ranges, safety rules, COPD target 88–92%</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Quick Revision Tips</h3>
+        <ul>
+          <li>Write the five nursing-process steps and six infection-chain links from memory every day until automatic.</li>
+          <li>For every theory, prepare one sentence focus + one clinical example.</li>
+          <li>Practice PQRST and normal vital-sign values until you can recite them instantly.</li>
+          <li>Know why the upper outer quadrant of the buttock is preferred and what must be avoided.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section id="progress" class="section">
+      <div class="card">
+        <h2>My Progress</h2>
+        <p class="text-muted">Your practice data is stored locally on this device only.</p>
+        <div class="stat-grid" id="progress-stats">
+          <div class="stat-box"><div class="val">0</div><div class="lbl">Quiz Attempts</div></div>
+          <div class="stat-box"><div class="val">0%</div><div class="lbl">Average Score</div></div>
+          <div class="stat-box"><div class="val">0%</div><div class="lbl">Best Score</div></div>
+          <div class="stat-box"><div class="val">0</div><div class="lbl">Flashcards Reviewed</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>How to Improve</h3>
+        <ul>
+          <li>Use Flashcards daily for active recall of key facts.</li>
+          <li>Do the Practice Quiz in short sessions and review wrong answers immediately.</li>
+          <li>Focus extra time on High-Yield topics.</li>
+          <li>Install the app and study offline whenever you have a few free minutes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <p><strong>MedIntellect Academy</strong></p>
+      <p>Foundation of Nursing (FON) | 200 Level Nursing Science</p>
+      <p class="mt-1">Created by <strong>Sen. Chima Chimdindu Macdonald (DAVINTODIGITAL)</strong><br>Founder, MedIntellect Academy</p>
+      <p class="mt-1 text-muted">All content derived from lecture notes, handouts and textbook materials.</p>
+    </footer>
+  </main>
+
+  <div class="install-banner" id="install-banner">
+    <span>Install FON Academy for offline study</span>
+    <button class="btn btn-primary btn-sm" id="install-btn">Install</button>
+    <button class="btn btn-secondary btn-sm" id="dismiss-install">✕</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

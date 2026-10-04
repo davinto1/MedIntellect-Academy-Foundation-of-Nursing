@@ -1,0 +1,26 @@
+{
+  "name": "MedIntellect Academy - FON Exam Prep",
+  "short_name": "FON Academy",
+  "description": "Foundation of Nursing (FON) comprehensive study platform and examination preparation tool for 200 Level Nursing Science. Created by Sen. Chima Chimdindu Macdonald (DAVINTODIGITAL).",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#0b1e33",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "medical"],
+  "lang": "en"
+}
